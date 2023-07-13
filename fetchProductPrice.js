@@ -7,9 +7,9 @@ async function fetchFlipkartPrice(keyword) {
     try {
       const response = await axios.get(url);
       const $ = cheerio.load(response.data);
-  
+
       const product = $('._1AtVbE');
-  
+
       const title = product.find('a ._4rR01T').first().text().trim();
       const price = product.find('a ._30jeq3._1_WHN1').first().text().trim();
       const rating = product.find('._3LWZlK').first().text().trim();
@@ -38,3 +38,4 @@ async function fetchFlipkartPrice(keyword) {
   
   const productKeyword = 'Iphone 11 pro';
   fetchProductDetails(productKeyword);
+  
